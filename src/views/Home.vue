@@ -11,9 +11,8 @@
       </el-col>
     </el-row>
     <div class="banner">
-      <left-nav class="left_nav" v-on:childByValue="childByValue" @click="getTopUp()"></left-nav>
-
-     <div class="centermain">
+      <left-nav  class="left_nav" v-on:childByValue="childByValue" @click="getTopUp()"></left-nav>
+     <div class="centermain" >
         <el-main class="main"  v-for="(item, index) in list" :key="index">
           <img :src="item.thumbnail_pic_s" alt="">
           <span class="title">{{item.title}}</span>
@@ -39,7 +38,8 @@
           <span class="time">123</span>
       </el-main> -->
      </div>
-      <Right class="right"></Right>
+      <Right class="right" >
+      </Right>
     </div>
 
   </div>
@@ -94,7 +94,7 @@ export default {
     .grid-content{
       margin-left: 5px;
       margin-right: 5px;
-      line-height: 27px;
+      line-height: 54px;
       a{
         color: #4468D8;
       }
@@ -104,25 +104,25 @@ export default {
       .headerword{
         position: absolute;
         right: 10px;
-        top: 10px;
+        top: 20px;
       }
     }
   }
   .banner{
     display: flex;
     justify-content: space-between;
-    position: relative;
-
+    padding-left: 200px;
     .left_nav{
+        display: flex;
+        left: 0;
         margin-top: 5px;
-        // position:absolute;
-        left: 20px;
-        // width: 150px;
+        margin-left: 20px;
+        margin-right: 7.0625rem;
+        width: 150px;
         border-right: none;
       }
       .el-main{
           margin-top: 10px !important;
-
         }
       .centermain{
         width: 100%;
@@ -164,8 +164,16 @@ export default {
       }
 
       .right{
-        width: 23.75rem;
-        height: 18.75rem;
+        position: relative;
+        margin-top: .625rem;
+        width: 48.4375rem;
+        // height: 13.75rem;
+        // height: 100%;
+        background-color: #F4F5F6;
+        .banner-list{
+          position: absolute;
+          bottom: 0;
+        }
       }
     }
   }
