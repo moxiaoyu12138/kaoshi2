@@ -10,15 +10,38 @@
           <img src="~@/assets/images/headerword.png" alt="" class="headerword">
       </el-col>
     </el-row>
-    <left-nav class="left_nav" v-on:childByValue="childByValue" @click="getTopUp()"></left-nav>
-    <el-main class="main" v-for="(item,index) in list" :key="index" >
-        <img :src="item.thumbnail_pic_s" alt="">
-        <span class="title">{{item.title}}</span>
+    <div class="banner">
+      <left-nav class="left_nav" v-on:childByValue="childByValue" @click="getTopUp()"></left-nav>
 
-        <span class="press">{{item.author_name}}</span>
-        <span class="time">{{item.date}}</span>
-    </el-main>
-    <Right class="right"></Right>
+     <div class="centermain">
+        <el-main class="main"  v-for="(item, index) in list" :key="index">
+          <img :src="item.thumbnail_pic_s" alt="">
+          <span class="title">{{item.title}}</span>
+          <span class="press">{{item.author_name}}</span>
+          <span class="time">{{item.date}}</span>
+      </el-main>
+        <!-- <el-main class="main"  >
+          <img src="" alt="">
+          <span class="title">123</span>
+          <span class="press">123</span>
+          <span class="time">123</span>
+      </el-main>
+      <el-main class="main"  >
+          <img src="" alt="">
+          <span class="title">123</span>
+          <span class="press">123</span>
+          <span class="time">123</span>
+      </el-main>
+      <el-main class="main"  >
+          <img src="" alt="">
+          <span class="title">123</span>
+          <span class="press">123</span>
+          <span class="time">123</span>
+      </el-main> -->
+     </div>
+      <Right class="right"></Right>
+    </div>
+
   </div>
 </template>
 
@@ -63,11 +86,10 @@ export default {
 
 <style lang="scss" scoped>
 .home{
-  position: relative;
   .top{
     margin: 0 auto;
-    width: 100%;
-    height: 27px;
+    // width: 100%;
+    height: 54px;
     background-color: #f7f7f7;
     .grid-content{
       margin-left: 5px;
@@ -86,55 +108,66 @@ export default {
       }
     }
   }
-  .left_nav{
-    margin-top: 5px;
-    position:absolute;
-    left: 20px;
-    width: 150px;
-    border-right: none;
-  }
-  .main{
-    top: 20px;
-    left: 280px;
-    width: 750px;
+  .banner{
+    display: flex;
+    justify-content: space-between;
     position: relative;
-    height: 95px;
-    // background-color: blue !important;
-    margin: 0;padding: 0;
-    border-bottom: 1px solid #676767;
-    img{
-      width: 160px;
-      height: 85px;
-      // background-color: pink;
-    }
-    .title{
-      top: 0;
-      position:absolute;
-      color: #333;
-      font-size: 15px;
-    }
-    .press{
-      position:absolute;
-      bottom: 20px;
-      font-size: 20px;
-      color: #676767;
-    }
-    .time{
-      position: absolute;
-      right: 0;
-      bottom: 20px;
-      color: #676767;
-      font-size: 20px;
 
+    .left_nav{
+        margin-top: 5px;
+        // position:absolute;
+        left: 20px;
+        // width: 150px;
+        border-right: none;
+      }
+      .el-main{
+          margin-top: 10px !important;
+
+        }
+      .centermain{
+        width: 100%;
+        .main{
+        display: flex;
+        flex-direction:row;
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+        position: relative;
+        height: 95px;
+        margin: 0;padding: 0;
+        border-bottom: 1px solid #676767;
+        img{
+          height: 85px;
+        }
+        .title{
+          top: 0;
+          left: 160px;
+          position:absolute;
+          color: #333;
+          font-size: 15px;
+        }
+        .press{
+          position:absolute;
+          left: 160px;
+          bottom: 20px;
+          font-size: 16px;
+          color: #676767;
+        }
+        .time{
+          position: absolute;
+          right: 0;
+          bottom: 16px;
+          color: #676767;
+          font-size: 20px;
+
+        }
+      }
+      }
+
+      .right{
+        width: 23.75rem;
+        height: 18.75rem;
+      }
     }
   }
-  .right{
-    position: absolute;
-    top: 35px;
-    right: 20px;
-    width: 380px;
-    height: 300px;
-  }
-}
 
 </style>

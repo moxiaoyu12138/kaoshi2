@@ -59,15 +59,14 @@ export default {
 <style lang="scss" scoped>
 .left-nav{
 
-  .el-menu-item{
-    // margin-top: 10px;
+  el-menu-item{
+    margin-top: 10px;
     padding-left: 0 !important;
     height: 60px;
-
   }
   .item{
     display: inline-block;
-    width: 150px ;
+    // width: 150px ;
     height: 60px;
     border-radius: 5px;
     line-height: 60px;
